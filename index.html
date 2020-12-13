@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./normalize.css" />
+    <style>
+      body {
+        font-size: 16px;
+        background-color: #f1f1f1;
+        font-family: 'Roboto', sans-serif;
+      }
+      #anagram-input {
+        border: unset;
+        padding: 14px;
+        font-size: 16px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        min-width: 250px;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+      .btn-generate {
+        padding: 14px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+        background-color: #08a6e2;
+        color: white;
+        font-weight: 700;
+        outline: none;
+      }
+      .results-container{
+        margin: 40px;
+        padding: 20px;
+        border-radius: 10px;
+        min-width: 260px;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Anagram Checker</h1>
+      <div>
+        <input id="anagram-input" value="kita atik tika aku kia makan kua" />
+        <button class="btn-generate" onclick="generate()">Generate</button>
+      </div>
+      <div class="results-container">
+        <h4 style="margin: 0 0 10px; padding: 0">Result</h4>
+        <div id="result">
+
+        </div>
+      </div>
+    </div>
+    <script src="./anagram.js"></script>
+  </body>
+</html>
