@@ -1,4 +1,4 @@
-var value = ["kita", "atik", "tika", "aku", "kia", "makan", "kua"];
+var value = ["kita", "atik", "tika", "aku", "kia", "makan", "kua", "nakam"];
 
 function sort(val) {
   var str = val.split("");
@@ -17,36 +17,19 @@ function sort(val) {
   return str.join("");
 }
 
-function isAnagram(str1, str2) {
-  if (str1 === null || str2 === null) {
-    return false;
-  }
-  if (str1.length !== str2.length) {
-    return false;
-  }
-  if (sort(str1) === sort(str2)) {
-    return true;
-  }
-  return false;
-}
-
 function main(arr) {
-  const newArray = [];
-  let index = 0;
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] !== null) {
-      newArray.push([arr[i]]);
-      for (var j = i + 1; j < arr.length; j++) {
-        if (isAnagram(newArray[index][0], arr[j])) {
-          newArray[index].push(arr[j]);
-          arr[j] = null;
-        }
-      }
-      index = index + 1;
+  var object = {}
+
+  for(var i = 0; i < arr.length; i++){
+    var sorted = sort(arr[i]) 
+    if(object[sorted]){
+      object[sorted].push(arr[i])
+    }else {
+      object[sorted] = [arr[i]]
     }
   }
-  console.log(newArray);
-  return newArray;
+
+  return Object.values(object);
 }
 
 function generate() {
